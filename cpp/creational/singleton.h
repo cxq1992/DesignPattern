@@ -5,7 +5,7 @@ namespace creational {
 class President
 {
 public:
-    President& CreatePresident()
+    static President& CreatePresident()
     {
         static President president = President();
         return president;
