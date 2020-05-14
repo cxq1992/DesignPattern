@@ -16,3 +16,4 @@
 *.cxxflags
 *.files
 *.includes
+*.creator.user
