@@ -10,31 +10,31 @@ of a varying prototype or class from some method call, which is assumed to be
 "new".
 */
 
+#include <stdio.h>
 #include <iostream>
 #include <memory>
-#include <stdio.h>
 
 class Door {
-public:
+ public:
   virtual ~Door() = default;
   virtual float GetWidth() = 0;
   virtual float GetHeight() = 0;
 };
 
 class WoodenDoor : public Door {
-public:
+ public:
   WoodenDoor(int width, int height) : _width(width), _height(height) {}
   virtual ~WoodenDoor() = default;
   virtual float GetWidth() { return _width; }
   virtual float GetHeight() { return _height; }
 
-private:
+ private:
   float _width;
   float _height;
 };
 
 class DoorFactory {
-public:
+ public:
   static std::shared_ptr<Door> MakeDoor(int width, int height) {
     return std::shared_ptr<Door>(new WoodenDoor(width, height));
   }
